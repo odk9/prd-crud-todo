@@ -1,0 +1,141 @@
+{
+  "title": "Todo List CRUD App",
+  "features": [
+    {
+      "name": "Todo Management",
+      "description": "",
+      "subFeatures": [
+        "Create new todos with title, optional description, and optional tags",
+        "Read/list all todos with pagination",
+        "Update todo title, description, completion status, and tags",
+        "Delete todos (soft delete with archive)"
+      ]
+    },
+    {
+      "name": "Filtering & Search",
+      "description": "",
+      "subFeatures": [
+        "Filter by status: all, active, completed",
+        "Search todos by title keyword",
+        "Filter todos by one or multiple tags",
+        "Sort by creation date, completion date, or alphabetical"
+      ]
+    },
+    {
+      "name": "Persistence",
+      "description": "",
+      "subFeatures": [
+        "Save todos to local JSON file storage",
+        "Load todos on startup",
+        "Auto-save on every mutation"
+      ]
+    },
+    {
+      "name": "Statistics",
+      "description": "",
+      "subFeatures": [
+        "Count of total, active, completed todos",
+        "Completion percentage",
+        "Count of todos per tag"
+      ]
+    },
+    {
+      "name": "REST API",
+      "description": "",
+      "subFeatures": [
+        "Expose CRUD operations via HTTP endpoints",
+        "Return and accept JSON payloads",
+        "Support query parameters for filtering, search, sorting, pagination, and tags",
+        "Expose statistics through a dedicated endpoint",
+        "Expose tag listing through a dedicated endpoint",
+        "Standard HTTP status codes and error responses (400, 404, 500)"
+      ]
+    },
+    {
+      "name": "Tag System",
+      "description": "",
+      "subFeatures": [
+        "Assign multiple tags to a todo",
+        "Remove one or more tags from a todo",
+        "Normalize tags (trim, lowercase, deduplicate)",
+        "List all existing tags used across non-archived todos",
+        "Pure TypeScript, no frameworks",
+        "Node.js runtime",
+        "File-based JSON storage (no database)",
+        "Exported as ES modules",
+        "Type-safe interfaces for all models",
+        "Todo model must include a `tags: string[]` field",
+        "Built-in HTTP server for REST API",
+        "JSON request parsing and response serialization",
+        "Basic input validation for API payloads, including tag format and maximum tag count per todo",
+        "`src/models/todo.ts` — Todo interface and types",
+        "`src/storage/json-store.ts` — File-based persistence",
+        "`src/services/todo-service.ts` — Business logic (CRUD + tag assignment/removal)",
+        "`src/services/filter-service.ts` — Filtering, search, and tag filtering",
+        "`src/services/stats-service.ts` — Statistics calculations (including per-tag counts)",
+        "`src/services/tag-service.ts` — Tag normalization, deduplication, and tag listing",
+        "`src/api/routes.ts` — REST route definitions and handlers",
+        "`src/api/server.ts` — HTTP server setup and routing",
+        "`src/api/validators.ts` — Request payload validation (including tags)",
+        "`src/index.ts` — Main entry point and exports",
+        "LOC estimate: ~760",
+        "Files: 10",
+        "Dependencies: 0 (pure Node.js)",
+        "Complexity: MEDIUM"
+      ]
+    }
+  ],
+  "fileStructure": [
+    {
+      "path": "src/models/todo.ts",
+      "description": "Todo interface and types"
+    },
+    {
+      "path": "src/storage/json-store.ts",
+      "description": "File-based persistence"
+    },
+    {
+      "path": "src/services/todo-service.ts",
+      "description": "Business logic (CRUD + tag assignment/removal)"
+    },
+    {
+      "path": "src/services/filter-service.ts",
+      "description": "Filtering, search, and tag filtering"
+    },
+    {
+      "path": "src/services/stats-service.ts",
+      "description": "Statistics calculations (including per-tag counts)"
+    },
+    {
+      "path": "src/services/tag-service.ts",
+      "description": "Tag normalization, deduplication, and tag listing"
+    },
+    {
+      "path": "src/api/routes.ts",
+      "description": "REST route definitions and handlers"
+    },
+    {
+      "path": "src/api/server.ts",
+      "description": "HTTP server setup and routing"
+    },
+    {
+      "path": "src/api/validators.ts",
+      "description": "Request payload validation (including tags)"
+    },
+    {
+      "path": "src/index.ts",
+      "description": "Main entry point and exports"
+    }
+  ],
+  "complexity": "MEDIUM",
+  "estimatedLOC": 760,
+  "featureCount": 6,
+  "fileCount": 10,
+  "implicitNeeds": [
+    "TypeScript strict mode",
+    "ES module exports",
+    "Error handling",
+    "Type-safe interfaces"
+  ],
+  "prdName": "prd-crud-todo"
+}
